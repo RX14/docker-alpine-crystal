@@ -4,6 +4,6 @@ for version in "${versions[@]}"; do
     echo
     echo "building crystal ${version}"
     echo
-    docker build --no-cache -t rx14/alpine-crystal:${version} --build-arg crystal_version=${version}-r1 .
+    docker build -t rx14/alpine-crystal:${version} --build-arg crystal_version=${version}-r1 .
     docker push rx14/alpine-crystal:${version} &
 done
